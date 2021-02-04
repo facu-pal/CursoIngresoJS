@@ -47,8 +47,8 @@ function multiplicar()
 function dividir()
 {
 	//creo las variables para que el usuario pueda guardar sus numero
-	let num1 =  parseInt(document.getElementById("txtIdNumeroUno").value);
-	let num2 = parseInt(document.getElementById("txtIdNumeroDos").value);
+	let num1 =  parseFloat(document.getElementById("txtIdNumeroUno").value);
+	let num2 = parseFloat(document.getElementById("txtIdNumeroDos").value);
 
 	//creo las variable donde se va a realizar la division  de los 2 numeros y se realiza dicha division 
 	let result = num1 / num2

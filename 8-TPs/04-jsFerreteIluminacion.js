@@ -10,5 +10,93 @@ E.	Si el importe final con descuento suma más de $120  se debe sumar un 10% de 
  */
 function CalcularPrecio () 
 {
+  
+    let marca;
+    let cantidad;
+    let porcentaje;
+    const PRECIO = 35;
+    let precioConDescuento;
+    let iibb;
+    let importeFinal;
+    let bandera = 0 ;
+
+    cantidad = parseInt(document.getElementById("txtIdCantidad").value);
+    marca = document.getElementById("Marca").value;
+
+
+    switch(cantidad)
+    {
+        case 1:
+        case 2:
+            porcentaje = 0;
+            break
+
+        case 3:
+            if(marca == "ArgentinaLuz" )
+            {
+                porcentaje = 15;
+            }
+            else if (marca == "FelipeLamparas")
+            {
+                porcentaje = 10;
+            }
+            else
+            {
+                porcentaje = 5;
+            }
+            break
+
+        case 4:
+            if(marca == "ArgentinaLuz" || marca == "FelipeLamparas")
+            {
+                porcentaje = 25;
+            }
+            else
+            {
+                porcentaje = 20;
+            }
+            break
+
+        case 5:
+            if(marca == "ArgentinaLuz")
+            {
+                porcentaje = 40;
+            }
+            else
+            {
+                porcentaje = 30;
+            }
+             break
+
+        default :
+        porcentaje = 50;   
+    }
+
+
+    descuento =  PRECIO * porcentaje / 100;
+
+    precioConDescuento = PRECIO - descuento ;
+    
+    importeFinal = precioConDescuento * cantidad;
+
+    if (importeFinal >120 )
+    {
+         iibb = importeFinal * 0.10;
+         importeFinal = importeFinal + iibb;
+         bandera = 1;
+    }
+    
+    document.getElementById("txtIdprecioDescuento").value = precioConDescuento.toFixed(2);
+    
+    if (bandera == 0)
+    {
+        alert("importe final " + importeFinal.toFixed(2) );
+    }
+    else
+    {
+        alert("importe final " + importeFinal.toFixed(2) + " de IIBB usted pago $ " + iibb );
+    }
+    
+
  	
 }

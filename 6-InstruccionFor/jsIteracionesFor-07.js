@@ -1,7 +1,17 @@
 function mostrar()
 {
+	let numeros;
+	let cantDivisores = 0;
 
-	alert("ok");
+	numeros = parseInt(prompt("ingrese un numero"))
 
-
-}//FIN DE LA FUNCIÓN
+	for(let i = 1 ; i <= numeros ; i++ )
+	{
+		if(numeros % i == 0)
+		{
+			cantDivisores++;
+			console.log(i)
+		}
+	}
+	console.log("Divisores encontrados " + cantDivisores);
+}
